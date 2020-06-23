@@ -19,10 +19,13 @@ def valid_guess(real, guess):
             all += 1
             shadow[i] = 1
             print(shadow)
-        elif guess[i] in real and guess[i] != real[i]:
+    for i in range(0, len(real)):
+        if guess[i] in real and guess[i] != real[i]:
             j = real.index(guess[i])
             if shadow[j] != 1:
                 half += 1
+
+
     return all, half
 
 
