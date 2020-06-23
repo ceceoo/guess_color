@@ -9,6 +9,9 @@ class MyTestCase(unittest.TestCase):
         guess_num = []
         self.assertEqual(-1, guess.guess_color(real, guess_num))
 
+    def test_inequal_length(self):
+        guess_num = ["red, blue"]
+        self.assertEqual(-1, guess.guess_color(real, guess_num))
 
 if __name__ == '__main__':
     unittest.main()
