@@ -7,27 +7,26 @@ def guess_color(real, guess):
         return -1
         print("invalid input")
 
-
 def valid_guess(real, guess):
     half = 0
     all = 0
-    shadow = []
-    for i in range(len(real)):
-        shadow.append(0)
+    size = len(real)
+    shadow = bulid_shadow(size)
     for i in range(0, len(real)):
         if guess[i] == real[i]:
             all += 1
             shadow[i] = 1
-            print(shadow)
-    for i in range(0, len(real)):
-        if guess[i] in real and guess[i] != real[i]:
+        elif guess[i] in real and guess[i] != real[i]:
             j = real.index(guess[i])
             if shadow[j] != 1:
                 half += 1
-
-
     return all, half
 
+def bulid_shadow(size):
+    shadow = []
+    for i in range(size):
+        shadow.append(0)
+    return shadow
 
 if __name__ == '__main__':
     real_set = ['red', 'yellow', 'blue', 'green', 'white', 'pink']
