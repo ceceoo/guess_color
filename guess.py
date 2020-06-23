@@ -27,6 +27,7 @@ if __name__ == '__main__':
         print("all: ", all, "\nhalf: ", half)
         if all == 4:
             print("Congratulations!")
+            break
         else:
             print(6-i, "chances left")
     print(real)

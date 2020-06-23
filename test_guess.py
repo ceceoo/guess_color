@@ -16,5 +16,9 @@ class MyTestCase(unittest.TestCase):
         guess_num = ["red", "blue", "yellow", "green"]
         self.assertEqual((4, 0), guess.guess_color(real, guess_num))
 
+    def test_failure(self):
+        guess_num = ["red", "pink", "yellow", "green"]
+        self.assertEqual((3, 0), guess.guess_color(real, guess_num))
+
 if __name__ == '__main__':
     unittest.main()
